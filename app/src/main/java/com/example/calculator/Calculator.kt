@@ -28,7 +28,7 @@ fun Calculator(
     buttonSpacing: Dp = 8.dp,
     onAction: (CalculatorAction) -> Unit //onAction is the Parameter which receives a callback function. Unit is the return type.
 ) {
-    Box(modifier = Modifier) {
+    Box(modifier = modifier) {
 
         Column(
             modifier = Modifier
