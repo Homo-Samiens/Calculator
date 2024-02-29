@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
             CalculatorTheme {
                 val viewModel = viewModel<CalculatorViewModel>()
                 val state = viewModel.state
-                val buttonSpacing = 8.dp
+                val buttonSpacing = 10.dp
                 Calculator(
                     state = state,
                     onAction = viewModel::onAction,
@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier
                         .fillMaxSize()
                         .background(MediumGray)
-                        .padding(16.dp)
+                        .padding(12.dp)
                     )
             }
         }
