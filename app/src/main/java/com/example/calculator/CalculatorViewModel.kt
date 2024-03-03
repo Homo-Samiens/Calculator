@@ -36,15 +36,14 @@ class CalculatorViewModel: ViewModel() {
     }
 
     private fun enterDecimal() {
-        if(state.operation == null && !state.number1.contains(".") && state.number1.isNotBlank()){
+        if(!state.number1.contains(".")){   // && state.operation == null && state.number1.isNotBlank()
             state = state.copy(
                 number1 = state.number1 + "."
             )
             return
-        }
-        if(!state.number2.contains(".") && state.number1.isNotBlank()){
+        } else if(!state.number2.contains(".")){    // && state.number2.isNotBlank()
             state = state.copy(
-                number2 = state.number1 + "."
+                number2 = state.number2 + "."
             )
         }
     }
@@ -68,7 +67,7 @@ class CalculatorViewModel: ViewModel() {
                 null -> return
             }
             state = state.copy(
-                number1 = result.toString().take(8),
+                number1 = result.toString().take(6),
                 number2 = "",
                 operation = null
             )
@@ -96,7 +95,7 @@ class CalculatorViewModel: ViewModel() {
     }
 
     companion object{
-        private const val MAX_NUM_LENGTH = 12
+        private const val MAX_NUM_LENGTH = 11
     }
 
 }
