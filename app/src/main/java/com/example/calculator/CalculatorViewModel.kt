@@ -67,7 +67,7 @@ class CalculatorViewModel: ViewModel() {
                 null -> return
             }
             state = state.copy(
-                number1 = result.toString().take(6),
+                number1 = result.toString().take(8),
                 number2 = "",
                 operation = null
             )
@@ -95,7 +95,7 @@ class CalculatorViewModel: ViewModel() {
     }
 
     companion object{
-        private const val MAX_NUM_LENGTH = 11
+        private const val MAX_NUM_LENGTH = 15
     }
 
 }
